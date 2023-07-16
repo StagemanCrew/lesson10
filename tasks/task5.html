@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-5</title>
+</head>
+<body>
+    <h1>Підрахувати кількість змін цін.</h1>
+
+    <script>
+        //1. Вводимо даннi
+        let securities = []
+            // Генеруємо випадкове число від 1 до 10000
+            //for (let i = 0; i < 10000; i++) {
+            //   let prices = Math.floor(Math.random() * 10000) + 1;
+            for (let i = 0; i < 10; i++) {
+                let prices = Math.floor(Math.random() * 1000) + 1;
+                securities.push(prices)
+            }
+            document.write(`<h2>Befor: ${securities}</h2>`)
+
+            //2. Знаходимо результат
+            let changeCount = 0;
+            for (let i = 1; i < securities.length; i++) {
+                if (securities[i] !== securities[i - 1]) {
+                    changeCount++;
+                }
+            }
+
+            //3. Виводимо результат
+            document.write(`<h2>After: ${changeCount}</h2>`)
+
+    </script>
+</body>
+</html>

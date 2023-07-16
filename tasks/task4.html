@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-4</title>
+</head>
+<body>
+    <h1>Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального.</h1>
+
+    <script>
+        //1. Вводимо даннi
+        let securities = []
+        // Генеруємо випадкове число від 1 до 10000
+        //for (let i = 0; i < 10000; i++) {
+        //   let prices = Math.floor(Math.random() * 10000) + 1;
+        for (let i = 0; i < 10; i++) {
+            let prices = Math.floor(Math.random() * 1000) + 1;
+            securities.push(prices)
+        }
+        document.write(`<h2>Befor: ${securities}</h2>`)
+
+        //2. Знаходимо результат
+        let max = Math.max(...securities)
+        let percentages = securities.map(price => ((price / max) * 100).toFixed(2));
+        
+        //3. Виводимо результат
+        document.write(`<h2>After: ${percentages}</h2>`)
+
+    </script>
+</body>
+</html>
